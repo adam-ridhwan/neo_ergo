@@ -1,7 +1,7 @@
 #ifndef HOMEROW_H
 #define HOMEROW_H
 
-#define NUM_SPC LT(NUMBER, KC_SPC)
+#define NUM_SPC LT(NUMBER_SYMBOL, KC_SPC)
 
 // homerow left keys
 #define SFT_A  SFT_T(KC_A)
@@ -16,5 +16,41 @@
 #define SFT_C  SFT_T(KC_SCLN)
 
 #define ALL_M   ALL_T(KC_M)
+
+// ─────────────────────────────────────────────────────────────────────────────
+// NUMBER AND SYMBOL LAYER
+// ─────────────────────────────────────────────────────────────────────────────
+
+#define LSBRC  KC_LBRC
+#define RSBRC  KC_RBRC
+#define LCBRC  KC_LCBR
+#define RCBRC  KC_RCBR
+#define GRAVE  KC_GRV
+
+#define UNDER  KC_UNDS
+#define LPRN   KC_LPRN
+#define RPRN	 KC_RPRN
+#define EQUAL  KC_EQL
+#define GT     KC_GT
+
+#define ONE    SFT_T(KC_1)
+#define TWO    CTL_T(KC_2)
+#define THREE  OPT_T(KC_3)
+#define FOUR   CMD_T(KC_4)
+#define FIVE   KC_5
+
+#define SIX    KC_6
+#define SEVEN  CMD_T(KC_7)
+#define EIGHT  OPT_T(KC_8)
+#define NINE   CTL_T(KC_9)
+#define ZERO   SFT_T(KC_0)
+
+
+#define BSLSH  KC_BSLS
+#define TILDE  KC_TILD
+
+#define PIPE   KC_PIPE
+#define MINUS  KC_MINS
+#define PLUS   KC_PPLS
 
 #endif
