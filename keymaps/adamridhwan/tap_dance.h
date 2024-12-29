@@ -53,7 +53,11 @@ static inline void right_thumb_finished(
             tap_code(KC_SPC);
             break;
         default:
-            perform_layer_toggle(thumb_tap_state.state, NUMBER, FUNCTION);
+            perform_layer_toggle(
+                thumb_tap_state.state,
+                NUMBER,
+                FUNCTION
+            );
             break;
     }
 }
@@ -62,7 +66,11 @@ static inline void right_thumb_reset(
     tap_dance_state_t *state,
     void *user_data
 ) {
-    perform_layer_reset(thumb_tap_state.state, NUMBER, FUNCTION);
+    perform_layer_reset(
+        thumb_tap_state.state,
+        NUMBER,
+        FUNCTION
+    );
     thumb_tap_state.state = TD_NONE;
 }
 
@@ -76,7 +84,11 @@ static inline void left_thumb_finished(
             tap_code(KC_BSPC);
             break;
         default:
-            perform_layer_toggle(thumb_tap_state.state, NAVIGATION, JAVASCRIPT);
+            perform_layer_toggle(
+                thumb_tap_state.state,
+                NAVIGATION,
+                JAVASCRIPT
+            );
             break;
     }
 }
@@ -90,8 +102,16 @@ static inline void left_thumb_reset(
 }
 
 tap_dance_action_t tap_dance_actions[] = {
-    [RTB] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, right_thumb_finished, right_thumb_reset),
-    [LTB] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, left_thumb_finished, left_thumb_reset)
+    [RTB] = ACTION_TAP_DANCE_FN_ADVANCED(
+                NULL,
+                right_thumb_finished,
+                right_thumb_reset
+            ),
+    [LTB] = ACTION_TAP_DANCE_FN_ADVANCED(
+                NULL,
+                left_thumb_finished,
+                left_thumb_reset
+            )
 };
 
 #endif
