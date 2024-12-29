@@ -12,13 +12,9 @@ enum layers {
     JAVASCRIPT = 5,
 };
 
-enum td_keycodes {
+enum tap_dance {
     RTB,  // Right thumb
     LTB   // Left thumb
-};
-
-enum combos {
-    CAPSLOCK_COMBO
 };
 
 typedef enum {
