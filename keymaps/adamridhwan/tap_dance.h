@@ -97,7 +97,11 @@ static inline void left_thumb_reset(
     tap_dance_state_t *state,
     void *user_data
 ) {
-    perform_layer_reset(thumb_tap_state.state, NAVIGATION, JAVASCRIPT);
+    perform_layer_reset(
+        thumb_tap_state.state,
+        NAVIGATION,
+        JAVASCRIPT
+    );
     thumb_tap_state.state = TD_NONE;
 }
 
