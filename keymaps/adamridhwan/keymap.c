@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ),
 
     [FUNCTION] = LAYOUT_hot(
-       //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
+       //,-----------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
            XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
        //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
            XXXXXXX , XXXXXXX ,  KC_F12 ,  KC_F7  ,  KC_F8  ,  KC_F9  , XXXXXXX ,              XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
