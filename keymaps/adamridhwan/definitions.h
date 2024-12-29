@@ -1,6 +1,8 @@
 #ifndef HOMEROW_H
 #define HOMEROW_H
 
+#define NUM_SPC LT(NUMBER, KC_SPC)
+
 // homerow left keys
 #define SFT_A  SFT_T(KC_A)
 #define CTL_S  CTL_T(KC_S)
