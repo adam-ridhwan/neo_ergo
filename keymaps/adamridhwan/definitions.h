@@ -29,7 +29,7 @@
 
 #define UNDER  KC_UNDS
 #define LPRN   KC_LPRN
-#define RPRN	 KC_RPRN
+#define RPRN   KC_RPRN
 #define EQUAL  KC_EQL
 #define GT     KC_GT
 
