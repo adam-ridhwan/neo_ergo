@@ -15,7 +15,7 @@
 #define CTL_L  CTL_T(KC_L)
 #define SFT_C  SFT_T(KC_SCLN)
 
-#define ALL_M   ALL_T(KC_M)
+#define ALL_M  ALL_T(KC_M)
 
 // ─────────────────────────────────────────────────────────────────────────────
 // NUMBER AND SYMBOL LAYER
