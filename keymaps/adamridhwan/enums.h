@@ -10,4 +10,9 @@ enum layers {
     FUNCTION = 3,
 };
 
+enum macros {
+    SEARCH = SAFE_RANGE,
+
+};
+
 #endif

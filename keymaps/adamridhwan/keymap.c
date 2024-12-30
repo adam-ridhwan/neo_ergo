@@ -22,12 +22,18 @@ bool caps_word_press_user(uint16_t keycode) {
     }
 };
 
-layer_state_t layer_state_set_kb(layer_state_t state) {
-    rgblight_set_layer_state(1, layer_state_cmp(state, NAVIGATION));
-    rgblight_set_layer_state(2, layer_state_cmp(state, NUMBER_SYMBOL));
-    rgblight_set_layer_state(3, layer_state_cmp(state, FUNCTION));
-
-    return layer_state_set_user(state);
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SEARCH:
+            if (record->event.pressed) {
+                tap_code(KC_ESC);
+                register_mods(MOD_BIT(KC_LGUI));
+                tap_code(KC_E);
+                unregister_mods(MOD_BIT(KC_LGUI));
+            }
+            break;
+    }
+    return true;
 }
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -50,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,              XXXXXXX , KC_HOME ,  KC_UP  ,  KC_END , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
+        XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,  SEARCH , XXXXXXX , XXXXXXX ,              XXXXXXX , KC_HOME ,  KC_UP  ,  KC_END , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         XXXXXXX , XXXXXXX , KC_LSFT , KC_LCTL , KC_LOPT , KC_LCMD , XXXXXXX ,              KC_PGUP , KC_LEFT , KC_DOWN , KC_RGHT , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
@@ -64,11 +70,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  LSBRC  ,  RSBRC  ,  LCBRC  ,  RCBRC  ,  GRAVE  ,               UNDER  ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX , XXXXXXX , _______ ,
+        XXXXXXX , XXXXXXX ,  LSBRC  ,  RSBRC  ,  LCBRC  ,  RCBRC  , XXXXXXX ,              XXXXXXX ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX , XXXXXXX , _______ ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         XXXXXXX , CW_TOGG ,   ONE   ,   TWO   ,  THREE  ,   FOUR  ,   FIVE  ,                SIX   ,  SEVEN  ,  EIGHT  ,   NINE  ,   ZERO  , XXXXXXX ,      _______      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  BSLSH  ,  TILDE  ,  MINUS  ,   PLUS  ,   PIPE  , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
+        XXXXXXX , XXXXXXX ,  BSLSH  ,  TILDE  ,  MINUS  ,   PLUS  ,   PIPE  ,  GRAVE  ,     UNDER  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
                   XXXXXXX , XXXXXXX ,                     XXXXXXX ,  KC_SPC ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
