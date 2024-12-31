@@ -8,7 +8,7 @@ bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         case KC_A ... KC_Z:
         case KC_MINS:
-            add_weak_mods(MOD_BIT(KC_LSFT));
+        add_weak_mods(MOD_BIT(KC_LSFT));
             return true;
 
         case KC_1 ... KC_0:
@@ -34,6 +34,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
     }
     return true;
+}
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SFT_A:
+        case CTL_S:
+        case OPT_D:
+        case CMD_F:
+        case CMD_J:
+        case OPT_K:
+        case CTL_L:
+        case SFT_C:
+            return true;
+        default:
+            return false;
+    }
 }
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -70,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  GRAVE  ,  TILDE  ,  LCBRC  ,  RCBRC  ,   PLUS  ,              XXXXXXX ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX , XXXXXXX , _______ ,
+        XXXXXXX , XXXXXXX ,  GRAVE  ,  TILDE  ,  LCBRC  ,  RCBRC  ,   PLUS  ,               UNDER  ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX , XXXXXXX , _______ ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         XXXXXXX , CW_TOGG ,   ONE   ,   TWO   ,  THREE  ,   FOUR  ,   FIVE  ,                SIX   ,  SEVEN  ,  EIGHT  ,   NINE  ,   ZERO  , XXXXXXX ,      _______      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  BSLSH  ,   PIPE  ,  LSBRC  ,  RSBRC  ,  MINUS  , XXXXXXX ,     UNDER  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
+        XXXXXXX , XXXXXXX ,  BSLSH  ,   PIPE  ,  LSBRC  ,  RSBRC  ,  MINUS  , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
                   XXXXXXX , XXXXXXX ,                     XXXXXXX ,  KC_SPC ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
