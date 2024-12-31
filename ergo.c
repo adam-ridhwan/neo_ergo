@@ -2,7 +2,9 @@
 
 #ifdef RGBLIGHT_ENABLE
 
-const rgblight_segment_t PROGMEM layer_all[] = RGBLIGHT_LAYER_SEGMENTS({0, 17, HSV_WHITE});
+const rgblight_segment_t PROGMEM layer_all[] = RGBLIGHT_LAYER_SEGMENTS({
+    0, 17, HSV_WHITE
+});
 
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     layer_all

@@ -32,6 +32,49 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_mods(MOD_BIT(KC_LGUI));
             }
             break;
+
+        case HS_A:
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(HYPR(KC_A));
+            } else if (!record->tap.count && record->event.pressed) {
+                register_code(KC_LSFT);
+            } else if (!record->event.pressed) {
+                unregister_code(KC_LSFT);
+            }
+            return false;
+
+        case HC_S:
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(HYPR(KC_S));
+                return false;
+            } else if (!record->tap.count && record->event.pressed) {
+                register_code(KC_LCTL);
+            } else if (!record->event.pressed) {
+                unregister_code(KC_LCTL);
+            }
+            return false;
+
+        case HO_D:
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(HYPR(KC_D));
+                return false;
+            } else if (!record->tap.count && record->event.pressed) {
+                register_code(KC_LALT);
+            } else if (!record->event.pressed) {
+                unregister_code(KC_LALT);
+            }
+            return false;
+
+        case HG_F:
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(HYPR(KC_F));
+                return false;
+            } else if (!record->tap.count && record->event.pressed) {
+                register_code(KC_LGUI);
+            } else if (!record->event.pressed) {
+                unregister_code(KC_LGUI);
+            }
+            return false;
     }
     return true;
 }
@@ -46,6 +89,7 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
         case OPT_K:
         case CTL_L:
         case SFT_C:
+        case NUM_SPC:
             return true;
         default:
             return false;
@@ -72,13 +116,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,  SEARCH , XXXXXXX , XXXXXXX ,              XXXXXXX , KC_HOME ,  KC_UP  ,  KC_END , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
+        XXXXXXX , XXXXXXX ,  HYP_Q  ,  HYP_W  ,  HYP_E  ,  HYP_R  ,  HYP_T  ,              XXXXXXX , KC_HOME ,  KC_UP  ,  KC_END , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX , KC_LSFT , KC_LCTL , KC_LOPT , KC_LCMD , XXXXXXX ,              KC_PGUP , KC_LEFT , KC_DOWN , KC_RGHT , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
+        XXXXXXX , XXXXXXX ,   HS_A  ,   HC_S  ,   HO_D  ,   HG_F  ,  HYP_G  ,              KC_PGUP , KC_LEFT , KC_DOWN , KC_RGHT , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    KC_PGDN , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-                  XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
+                  XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,               KC_SPC , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
 
@@ -86,9 +130,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  GRAVE  ,  TILDE  ,  LCBRC  ,  RCBRC  ,   PLUS  ,               UNDER  ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX , XXXXXXX , _______ ,
+        XXXXXXX , XXXXXXX , XXXXXXX ,  TILDE  ,  LCBRC  ,  RCBRC  ,   PLUS  ,               UNDER  ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX , XXXXXXX , _______ ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , CW_TOGG ,   ONE   ,   TWO   ,  THREE  ,   FOUR  ,   FIVE  ,                SIX   ,  SEVEN  ,  EIGHT  ,   NINE  ,   ZERO  , XXXXXXX ,      _______      , XXXXXXX ,
+        XXXXXXX , CW_TOGG ,   ONE   ,   TWO   ,  THREE  ,   FOUR  ,   FIVE  ,                SIX   ,  SEVEN  ,  EIGHT  ,   NINE  ,   ZERO  ,  GRAVE  ,      _______      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         XXXXXXX , XXXXXXX ,  BSLSH  ,   PIPE  ,  LSBRC  ,  RSBRC  ,  MINUS  , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|

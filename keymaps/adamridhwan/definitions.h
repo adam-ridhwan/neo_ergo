@@ -17,6 +17,18 @@
 
 #define ALL_M  ALL_T(KC_M)
 
+#define HYP_Q  HYPR(KC_Q)
+#define HYP_W  HYPR(KC_W)
+#define HYP_E  HYPR(KC_E)
+#define HYP_R  HYPR(KC_R)
+#define HYP_T  HYPR(KC_T)
+
+#define HS_A   LT(0, KC_NO)
+#define HC_S   LT(1, KC_NO)
+#define HO_D   LT(2, KC_NO)
+#define HG_F   LT(3, KC_NO)
+#define HYP_G  HYPR(KC_G)
+
 // ─────────────────────────────────────────────────────────────────────────────
 // NUMBER AND SYMBOL LAYER
 // ─────────────────────────────────────────────────────────────────────────────
