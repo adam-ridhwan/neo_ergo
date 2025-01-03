@@ -29,6 +29,12 @@
 #define HG_F   LT(3, KC_NO)
 #define HYP_G  HYPR(KC_G)
 
+#define HYP_Z  HYPR(KC_Z)
+#define HYP_X  HYPR(KC_X)
+#define HYP_C  HYPR(KC_C)
+#define HYP_V  HYPR(KC_V)
+#define HYP_B  HYPR(KC_B)
+
 // ─────────────────────────────────────────────────────────────────────────────
 // NUMBER AND SYMBOL LAYER
 // ─────────────────────────────────────────────────────────────────────────────
