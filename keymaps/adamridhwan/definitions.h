@@ -1,9 +1,9 @@
 #ifndef HOMEROW_H
 #define HOMEROW_H
 
-#define NUM_SPC LT(NUMBER_SYMBOL, KC_SPC)
+#define NUM_SPC LT(NUMBER, KC_SPC)
 #define NAV     MO(NAVIGATION)
-#define JSC     MO(JAVASCRIPT)
+#define SYM     MO(SYMBOL)
 
 // homerow left keys
 #define SFT_A  SFT_T(KC_A)
@@ -71,5 +71,16 @@
 #define AMPR   KC_AMPR
 #define MINUS  KC_MINS
 #define PLUS   KC_PPLS
+
+#define QUOTE  KC_QUOT
+#define DQUOT  KC_DQUO
+
+#define EXCLM  KC_EXLM
+#define AT     KC_AT
+#define HASH   KC_HASH
+#define DLR    KC_DLR
+#define PERCNT KC_PERC
+#define CARET  KC_CIRC
+#define ASTRSK KC_ASTR
 
 #endif

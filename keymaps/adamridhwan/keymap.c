@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         KC_LSFT , XXXXXXX ,   KC_Z  ,   KC_X  ,   KC_C  ,   KC_V  ,   KC_B  , XXXXXXX ,      KC_N  ,  ALL_M  , KC_COMM ,  KC_DOT , KC_SLSH ,      KC_RSFT      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-                  KC_LCTL , KC_LALT ,                     KC_LCMD ,    NAV  ,              NUM_SPC ,   JSC   ,                     KC_RALT , XXXXXXX , KC_LCTL
+                  KC_LCTL , KC_LALT ,                     KC_LCMD ,    NAV  ,              NUM_SPC ,   SYM   ,                     KC_RALT , XXXXXXX , KC_LCTL
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
 
@@ -68,31 +68,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
 
-    [NUMBER_SYMBOL] = LAYOUT_hot(
+    [NUMBER] = LAYOUT_hot(
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  TILDE  ,  SEVEN  ,  EIGHT  ,   NINE  ,   PLUS  ,              XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
+        XXXXXXX , XXXXXXX , XXXXXXX ,  SEVEN  ,  EIGHT  ,   NINE  , XXXXXXX ,              XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , CW_TOGG ,  GRAVE  ,   FOUR  ,   FIVE  ,   SIX   ,  MINUS  ,              XXXXXXX , KC_RCMD , KC_RALT , KC_RCTL , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
+        XXXXXXX , CW_TOGG , XXXXXXX ,   FOUR  ,   FIVE  ,   SIX   , XXXXXXX ,              XXXXXXX , KC_RCMD , KC_RALT , KC_RCTL , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  BSLSH  ,   ONE   ,   TWO   ,  THREE  ,  UNDER  , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
+        XXXXXXX , XXXXXXX , XXXXXXX ,   ONE   ,   TWO   ,  THREE  , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
                   XXXXXXX , XXXXXXX ,                     XXXXXXX ,   ZERO  ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
 
-    [JAVASCRIPT] = LAYOUT_hot(
+    [SYMBOL] = LAYOUT_hot(
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  TILDE  ,  GRAVE  ,   AMPR  ,   PIPE  , XXXXXXX ,              XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
+        XXXXXXX , XXXXXXX , XXXXXXX ,   AMPR  ,  GRAVE  ,   PIPE  ,   PLUS  ,              XXXXXXX ,  PERCNT ,  CARET  ,  ASTRSK , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX ,              XXXXXXX , KC_RCMD , KC_RALT , KC_RCTL , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
+        XXXXXXX , XXXXXXX ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   ,  MINUS  ,              XXXXXXX , KC_RCMD , KC_RALT , KC_RCTL , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  LSBRC  ,  RSBRC  ,  LCBRC  ,  RCBRC  , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
+        XXXXXXX , XXXXXXX ,  LSBRC  ,  RSBRC  ,  LCBRC  ,  RCBRC  ,  UNDER  , XXXXXXX ,     EXCLM  ,    AT   ,   HASH  ,   DLR   , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-                  XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
+                  XXXXXXX , XXXXXXX ,                      DQUOT  ,  QUOTE  ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
 

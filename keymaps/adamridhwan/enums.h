@@ -6,8 +6,8 @@
 enum layers {
     BASE = 0,
     NAVIGATION = 1,
-    NUMBER_SYMBOL = 2,
-    JAVASCRIPT = 3,
+    NUMBER = 2,
+    SYMBOL = 3,
 };
 
 enum macros {
