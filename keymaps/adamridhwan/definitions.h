@@ -53,18 +53,16 @@
 #define EQUAL  KC_EQL
 #define GT     KC_GT
 
-#define ONE    SFT_T(KC_1)
-#define TWO    CTL_T(KC_2)
-#define THREE  OPT_T(KC_3)
-#define FOUR   CMD_T(KC_4)
+#define ONE    KC_1
+#define TWO    KC_2
+#define THREE  KC_3
+#define FOUR   KC_4
 #define FIVE   KC_5
-
 #define SIX    KC_6
-#define SEVEN  CMD_T(KC_7)
-#define EIGHT  OPT_T(KC_8)
-#define NINE   CTL_T(KC_9)
-#define ZERO   SFT_T(KC_0)
-
+#define SEVEN  KC_7
+#define EIGHT  KC_8
+#define NINE   KC_9
+#define ZERO   KC_0
 
 #define BSLSH  KC_BSLS
 #define TILDE  KC_TILD

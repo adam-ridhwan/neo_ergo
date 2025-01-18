@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         XXXXXXX , XXXXXXX ,  BSLSH  ,   ONE   ,   TWO   ,  THREE  ,  UNDER  , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-                  XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
+                  XXXXXXX , XXXXXXX ,                     XXXXXXX ,   ZERO  ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
 
