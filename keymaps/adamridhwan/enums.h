@@ -4,10 +4,12 @@
 #include QMK_KEYBOARD_H
 
 enum layers {
-    BASE = 0,
-    NAVIGATION = 1,
-    NUMBER = 2,
-    SYMBOL = 3,
+    QWERTY = 0,
+    COLEMAK = 1,
+    NAVIGATION = 2,
+    NUMBER = 3,
+    SYMBOL = 4
+    ,
 };
 
 enum macros {

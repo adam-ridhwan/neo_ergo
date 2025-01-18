@@ -5,32 +5,43 @@
 #define NAV     MO(NAVIGATION)
 #define SYM     MO(SYMBOL)
 
-// homerow left keys
+#define QWER    DF(QWERTY)
+#define COLE    DF(COLEMAK)
+
+// ──────────────────────────────────────────────────────────────
+// QWERTY
+// ──────────────────────────────────────────────────────────────
+
 #define SFT_A  SFT_T(KC_A)
 #define CTL_S  CTL_T(KC_S)
 #define OPT_D  OPT_T(KC_D)
 #define CMD_F  CMD_T(KC_F)
 
-// homerow right keys
 #define CMD_J  CMD_T(KC_J)
 #define OPT_K  OPT_T(KC_K)
 #define CTL_L  CTL_T(KC_L)
 #define SFT_C  SFT_T(KC_SCLN)
 
-#define ALL_M  ALL_T(KC_M)
+// ──────────────────────────────────────────────────────────────
+// COLEMAK-DH
+// ──────────────────────────────────────────────────────────────
+
+#define SFT_A  SFT_T(KC_A)
+#define CTL_R  CTL_T(KC_R)
+#define OPT_S  OPT_T(KC_S)
+#define CMD_t  CMD_T(KC_T)
+
+#define CMD_N  CMD_T(KC_N)
+#define OPT_E  OPT_T(KC_E)
+#define CTL_I  CTL_T(KC_I)
+#define SFT_O  SFT_T(KC_O)
 
 #define HYP_Q  HYPR(KC_Q)
 #define HYP_W  HYPR(KC_W)
 #define HYP_E  HYPR(KC_E)
 #define HYP_R  HYPR(KC_R)
 #define HYP_T  HYPR(KC_T)
-
-#define HS_A   LT(0, KC_NO)
-#define HC_S   LT(1, KC_NO)
-#define HO_D   LT(2, KC_NO)
-#define HG_F   LT(3, KC_NO)
 #define HYP_G  HYPR(KC_G)
-
 #define HYP_Z  HYPR(KC_Z)
 #define HYP_X  HYPR(KC_X)
 #define HYP_C  HYPR(KC_C)
