@@ -2,6 +2,8 @@
 #define HOMEROW_H
 
 #define NUM_SPC LT(NUMBER_SYMBOL, KC_SPC)
+#define NAV     MO(NAVIGATION)
+#define JSC     MO(JAVASCRIPT)
 
 // homerow left keys
 #define SFT_A  SFT_T(KC_A)
@@ -68,6 +70,7 @@
 #define TILDE  KC_TILD
 
 #define PIPE   KC_PIPE
+#define AMPR   KC_AMPR
 #define MINUS  KC_MINS
 #define PLUS   KC_PPLS
 

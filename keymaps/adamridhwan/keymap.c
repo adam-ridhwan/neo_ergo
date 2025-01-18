@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         KC_LSFT , XXXXXXX ,   KC_Z  ,   KC_X  ,   KC_C  ,   KC_V  ,   KC_B  , XXXXXXX ,      KC_N  ,  ALL_M  , KC_COMM ,  KC_DOT , KC_SLSH ,      KC_RSFT      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-                  KC_LCTL , KC_LALT ,                     KC_LCMD ,   MO(1) ,              NUM_SPC , KC_LCMD ,                     KC_RALT , XXXXXXX , KC_LCTL
+                  KC_LCTL , KC_LALT ,                     KC_LCMD ,    NAV  ,              NUM_SPC ,   JSC   ,                     KC_RALT , XXXXXXX , KC_LCTL
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
 
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
         XXXXXXX , XXXXXXX ,  HYP_Z  ,  HYP_X  ,  HYP_C  ,  HYP_V  ,  HYP_B  , XXXXXXX ,    KC_PGDN , XXXXXXX , XXXXXXX , XXXXXXX , KC_ENT ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-                  XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
+                  XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,               KC_SPC , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
 
@@ -72,13 +72,42 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  GRAVE  ,  TILDE  ,  LCBRC  ,  RCBRC  ,   PLUS  ,               MINUS  ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX , XXXXXXX , _______ ,
+        XXXXXXX , XXXXXXX ,  TILDE  ,  SEVEN  ,  EIGHT  ,   NINE  ,   PLUS  ,              XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , CW_TOGG ,   ONE   ,   TWO   ,  THREE  ,   FOUR  ,   FIVE  ,                SIX   ,  SEVEN  ,  EIGHT  ,   NINE  ,   ZERO  , XXXXXXX ,      _______      , XXXXXXX ,
+        XXXXXXX , CW_TOGG ,  GRAVE  ,   FOUR  ,   FIVE  ,   SIX   ,  MINUS  ,              XXXXXXX , KC_RCMD , KC_RALT , KC_RCTL , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
-        XXXXXXX , XXXXXXX ,  BSLSH  ,   PIPE  ,  LSBRC  ,  RSBRC  ,  UNDER  , XXXXXXX ,    KC_QUOT , KC_DQUO , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
+        XXXXXXX , XXXXXXX ,  BSLSH  ,   ONE   ,   TWO   ,  THREE  ,  UNDER  , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
                   XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
     ),
+
+    [JAVASCRIPT] = LAYOUT_hot(
+    //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
+        XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+    //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
+        XXXXXXX , XXXXXXX ,  TILDE  ,  GRAVE  ,   AMPR  ,   PIPE  , XXXXXXX ,              XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
+    //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
+        XXXXXXX , XXXXXXX ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX ,              XXXXXXX , KC_RCMD , KC_RALT , KC_RCTL , KC_RSFT , XXXXXXX ,      _______      , XXXXXXX ,
+    //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
+        XXXXXXX , XXXXXXX ,  LSBRC  ,  RSBRC  ,  LCBRC  ,  RCBRC  , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
+    //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
+                  XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
+    //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
+    ),
+
+//     [NUMBER_SYMBOL] = LAYOUT_hot(
+//     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
+//         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,    XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+//     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
+//         XXXXXXX , XXXXXXX ,  TILDE  ,  GRAVE  ,  LCBRC  ,  RCBRC  ,   PLUS  ,               MINUS  ,   LPRN  ,   RPRN  ,  EQUAL  ,    GT   , XXXXXXX , XXXXXXX , _______ ,
+//     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
+//         XXXXXXX , CW_TOGG ,   ONE   ,   TWO   ,  THREE  ,   FOUR  ,   FIVE  ,                SIX   ,  SEVEN  ,  EIGHT  ,   NINE  ,   ZERO  , XXXXXXX ,      _______      , XXXXXXX ,
+//     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
+//         XXXXXXX , XXXXXXX ,  BSLSH  ,   PIPE  ,  LSBRC  ,  RSBRC  ,  UNDER  , XXXXXXX ,    KC_QUOT , KC_DQUO , XXXXXXX , XXXXXXX , XXXXXXX ,      XXXXXXX      , XXXXXXX ,
+//     //|---------+---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------+---------|
+//                   XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX ,              XXXXXXX , XXXXXXX ,                     XXXXXXX , XXXXXXX , XXXXXXX
+//     //,-------------------------------------------------------------------------------,  ,-------------------------------------------------------------------------------,
+//     ),
+
 };
